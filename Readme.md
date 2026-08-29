@@ -4,7 +4,7 @@
 El proyecto consiste en el desarrollo de un sistema wearable para monitorización continua de parámetros fisiológicos que afectan al control glucémico en pacientes diabéticos. El sistema integra múltiples sensores en una pulsera inteligente que procesa y fusiona datos en tiempo real para optimizar la dosificación de insulina.
 
 ## Innovación y Justificación
-Las bombas de insulina actuales basan sus cálculos principalmente en niveles de glucosa y carbohidratos ingeridos. Sin embargo, factores como el estrés, la actividad física y el estado fisiológico general afectan significativamente al control glucémico. Este sistema proporciona una monitorización multimodal que permite ajustes más precisos de la dosificación.
+Las bombas de insulina actuales basan sus cálculos principalmente en niveles de glucosa y carbohidratos ingeridos. Sin embargo, factores como el estrés, la actividad física y el estado fisiológico general afectan significativamente al control glucémico. Este sistema proporciona una monitorización multimodal que permite medir la actividad física para mejorar el ajuste dinámico de los parámetros de infusión.
 
 ## Arquitectura del Sistema
 
@@ -17,7 +17,6 @@ Las bombas de insulina actuales basan sus cálculos principalmente en niveles de
 2. **Sensores Integrados**:
    - MAX30100: PPG para ritmo cardíaco
    - BNO055: IMU para detección de actividad
-   - AD5940: Frontend analógico para EDA (Solo si da tiempo)
    - Módulo de temperatura corporal
 
 ### Firmware (Foco Principal)
@@ -29,7 +28,7 @@ Las bombas de insulina actuales basan sus cálculos principalmente en niveles de
 
 2. **Procesamiento de Señales**:
    - Algoritmos de reducción de ruido
-   - Detección de artefactos de movimiento
+   - Detección de movimiento
    - Fusión de datos de múltiples sensores
    - Extracción de características fisiológicas
 
@@ -74,7 +73,6 @@ Las bombas de insulina actuales basan sus cálculos principalmente en niveles de
 2. **Fase 2: Integración de Sensores**
    - PPG/ECG para ritmo cardíaco
    - IMU para actividad
-   - EDA para nivel de estrés
 
 3. **Fase 3: Procesamiento**
    - Algoritmos de filtrado
@@ -83,10 +81,12 @@ Las bombas de insulina actuales basan sus cálculos principalmente en niveles de
 
 4. **Fase 4: Comunicación**
    - Implementación BLE
-   - Protocolo de datos
-   - Interfaz con app móvil
+   - Protocolo de datos I2C
+     
+5. **Fase 5: Representación**
+   - Gráfica de representación de datos.
 
 ## Extensiones Futuras
-- Integración de bioimpedancia
+- EDA
 - Conexión con APIs de salud (HealthKit/Google Fit)
 - Algoritmos avanzados de predicción
